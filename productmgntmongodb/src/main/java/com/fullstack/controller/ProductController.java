@@ -19,6 +19,12 @@ public class ProductController {
 
     private final IProductService productService;
 
+    @GetMapping("/hey")
+    public ResponseEntity<String> sayHello() {
+        return new ResponseEntity<>("Welcome to Full Stack Java Developer", HttpStatus.OK);
+
+    }
+
     @PostMapping("/save")
     public ResponseEntity<Product> save(@RequestBody Product product) {
         log.info("@@@@@@@@@@Trying to save data for Product:   " + product.getProductName());
